@@ -66,7 +66,7 @@ class LH_User_Taxonomies_plugin {
 		global $wp_taxonomies;
 		
 		// Only modify user taxonomies, everything else can stay as is
-		if($object != 'user') return;
+		if($object != 'user' && (!is_array($object) || !in_array('user', $object))) return;
 		
 		// We're given an array, but expected to work with an object later on
 		$args	= (object) $args;

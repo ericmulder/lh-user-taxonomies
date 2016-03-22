@@ -225,6 +225,9 @@ class LH_User_Taxonomies_plugin {
 							<?php else:?>
 								<?php _e("There are no {$taxonomy->labels->name} available.")?>
 							<?php endif?>
+							<?php if(isset($taxonomy->description)) :
+								echo '<p class="description">' . $taxonomy->description . '</p>';
+							      endif;  ?>
 						</td>
 					</tr>
 				</table>
